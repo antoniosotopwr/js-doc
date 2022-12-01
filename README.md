@@ -44,5 +44,12 @@ In JS a **truthy**/**falsy** values is a value that is considered **true**/**fal
 
 **All other values are considered truthy!**
 
-more info: [js-truthy-falsy-expressions](https://frontend.turing.edu/lessons/module-1/js-truthy-falsy-expressions.html)
+More info: [js-truthy-falsy-expressions](https://frontend.turing.edu/lessons/module-1/js-truthy-falsy-expressions.html)
 
+## Statements and expressions
+
+An **expression** is a piece of code that produce a value.
+
+A **statement** is an instruction for the computes to do something.
+
+More info: [statements-vs-expressions](https://www.joshwcomeau.com/javascript/statements-vs-expressions/)
