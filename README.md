@@ -11,6 +11,13 @@ Javascript is **dynamic typing**: we don't have to manually define the data type
 
 **Type conversion** is when we manually convert form one type to another.
 
+Example:
+
+```js
+let age = '1984'; //string
+age = Number(age); //explicit conversion to number
+```
+
 **Type coercion** is when JS automatically converts behind the scenes for us.
 
 Examples:
