@@ -27,3 +27,22 @@ Examples:
 '23' / '2' => 11.5 //number
 2 + 4 + 3 + '5' => '95' //string
 ```
+
+## Truthy and falsy values
+
+In JS a **truthy**/**falsy** values is a value that is considered **true**/**false** when encountered in a boolean context.
+
+**Falsy** examples:
+
+* false
+* 0
+* -0
+* " "
+* null
+* undefined
+* NaN
+
+**All other values are considered truthy!**
+
+more info: [js-truthy-falsy-expressions](https://frontend.turing.edu/lessons/module-1/js-truthy-falsy-expressions.html)
+
