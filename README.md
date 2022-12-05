@@ -50,6 +50,34 @@ More info: [js-truthy-falsy-expressions](https://frontend.turing.edu/lessons/mod
 
 An **expression** is a piece of code that produce a value.
 
+For example:
+
+```js
+1 //produces --> 1
+"hello" //produces --> "hello"
+5*10 //produces --> 50
+num > 10 //produces --> bool (either true or false)
+```
+
 A **statement** is an instruction for the computes to do something.
+
+For example:
+
+```js
+let hi = 5;
+if (hi > 10 ){
+    //more statements here
+}
+```
+
+A tip about this: statements are the rigid structure that holds our program together, while expressions fill in the details.
+
+Statements often have "slots" for expressions. We can put any expression we like into those slots.
+
+For example, declaring a variable has an expression slot:
+
+```js
+let hi = // some expression ;
+```
 
 More info: [statements-vs-expressions](https://www.joshwcomeau.com/javascript/statements-vs-expressions/)
