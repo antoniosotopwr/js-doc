@@ -28,6 +28,8 @@ Examples:
 2 + 4 + 3 + '5' => '95' //string
 ```
 
+**Important**: the **+** simbol always convert which is next to it to string.
+
 ## Truthy and falsy values
 
 In JS a **truthy**/**falsy** values is a value that is considered **true**/**false** when encountered in a boolean context.
@@ -81,3 +83,50 @@ let hi = // some expression ;
 ```
 
 More info: [statements-vs-expressions](https://www.joshwcomeau.com/javascript/statements-vs-expressions/)
+
+## The conditional (ternary) operator
+
+A ternary operator evaluates a condition and executes a block of code based on the condition.
+
+It's syntax is:
+
+`condition ? expression1 : expression2`
+
+```js
+let bill = 275;
+let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill+tip}`);
+```
+
+More info: [js-ternary-operator](https://www.programiz.com/javascript/ternary-operator)
+
+## Function declaration and expression
+
+Function **declaration**:
+
+![Image](./img/func_decla.PNG)
+
+Function **expression**:
+
+![Image](./img/func_expre.PNG)
+
+The main differences between each other are the hoisting.
+
+More info: [when-to-use-function-expressions-vs-declaration-fcc](https://www.freecodecamp.org/news/when-to-use-a-function-declarations-vs-a-function-expression-70f15152a0a0/)
+More info: [when-to-use-function-expressions-vs-declaration-sidepoint](https://www.sitepoint.com/when-to-use-a-function-expression-vs-function-declaration/)
+
+## Parameters and arguments
+
+The **parameters** are the placeholder declared in the () of the function.
+
+In the next image (apples and oranges in orange ) are the parameters:
+
+![Image](./img/parameters.PNG)
+
+The **argument** is the actual value that we use to fill in the placeholder.
+
+In the image below, 5 and 0 are the arguments:
+
+![Image](./img/arguments.PNG)
+
