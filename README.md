@@ -147,8 +147,12 @@ We can declare arrays in two ways:
 
 The most popular:
 
-`let friends = ["jose", "adri", "nova"];`
+```js
+let friends = ["jose", "adri", "nova"];
+```
 
 The second one:
 
-`let years = new Array(1984, 1999, 1996);`
+```js
+let years = new Array(1984, 1999, 1996);
+```
