@@ -130,3 +130,13 @@ The **argument** is the actual value that we use to fill in the placeholder.
 In the image below, 5 and 0 are the arguments:
 
 ![Image](./img/arguments.PNG)
+
+## Arrow functions
+
+An arrow function is simply a special form of function expression that is shorter and therefore faster to write.
+
+Arrow functions do not get a so-called **this** keyword.
+
+More info: [js-arrow-function-gentle](https://www.javascripttutorial.net/es6/javascript-arrow-function/)
+
+More info: [js-arrow-function-doc](https://javascript.info/arrow-functions-basics)
