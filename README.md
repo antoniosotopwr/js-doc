@@ -140,3 +140,15 @@ Arrow functions do not get a so-called **this** keyword.
 More info: [js-arrow-function-gentle](https://www.javascripttutorial.net/es6/javascript-arrow-function/)
 
 More info: [js-arrow-function-doc](https://javascript.info/arrow-functions-basics)
+
+## Arrays
+
+We can declare arrays in two ways:
+
+The most popular:
+
+`let friends = ["jose", "adri", "nova"];`
+
+The second one:
+
+`let years = new Array(1984, 1999, 1996);`
