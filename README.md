@@ -101,7 +101,7 @@ console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bil
 
 More info: [js-ternary-operator](https://www.programiz.com/javascript/ternary-operator)
 
-## Function declaration and expression
+## Function declaration vs function expression
 
 Function **declaration**:
 
@@ -111,9 +111,10 @@ Function **expression**:
 
 ![Image](./img/func_expre.PNG)
 
-The main differences between each other are the hoisting.
+The main differences between each other are the hoisting. The function declaration allows hoisting while function expression not.
 
 More info: [when-to-use-function-expressions-vs-declaration-fcc](https://www.freecodecamp.org/news/when-to-use-a-function-declarations-vs-a-function-expression-70f15152a0a0/)
+
 More info: [when-to-use-function-expressions-vs-declaration-sidepoint](https://www.sitepoint.com/when-to-use-a-function-expression-vs-function-declaration/)
 
 ## Parameters and arguments
@@ -129,4 +130,3 @@ The **argument** is the actual value that we use to fill in the placeholder.
 In the image below, 5 and 0 are the arguments:
 
 ![Image](./img/arguments.PNG)
-
