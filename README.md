@@ -176,8 +176,26 @@ Objects are a unordered collection of **key:value** pairs. Each key-value pair i
 ```js
 let person = {
     firstName = "Antonio",
-    lastName = "Soto"
+    lastName = "Soto",
+    job = "web developer"
 };
 ```
 
 More info: [js-objects](https://www.javascripttutorial.net/javascript-objects/)
+
+## Dot vs Bracket notation
+
+We can access to the propertys of the object with the dot and bracket notation:
+
+```js
+console.log(person.firstName); //prints the name Antonio
+console.log(person['firstName']); //prints the same
+```
+
+We can use the bracket notation to access to some specific values:
+
+```js
+let keyName = "name";
+console.log(person['first'] + keyName); 
+console.log(person['last'] + keyName);
+```
