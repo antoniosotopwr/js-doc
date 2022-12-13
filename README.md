@@ -156,3 +156,15 @@ The second one:
 ```js
 let years = new Array(1984, 1999, 1996);
 ```
+
+Some array methods are:
+
+```js
+friends.push("juan"); // add a element at the end of the array
+friends.unshift("pedro"); // add a element at the begining of the array
+friends.pop(); // removes the last element
+friends.shift(); //removes the first element
+
+friends.indexOf("nova"); //return the index of the element in the array
+friends.includes("jose") // return true or false if it finds it or not
+```
