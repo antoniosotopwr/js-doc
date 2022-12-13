@@ -168,3 +168,16 @@ friends.shift(); //removes the first element
 friends.indexOf("nova"); //return the index of the element in the array
 friends.includes("jose") // return true or false if it finds it or not
 ```
+
+## Objects
+
+Objects are a unordered collection of **key:value** pairs. Each key-value pair is called a **property**.
+
+```js
+let person = {
+    firstName = "Antonio",
+    lastName = "Soto"
+};
+```
+
+More info: [js-objects](https://www.javascripttutorial.net/javascript-objects/)
