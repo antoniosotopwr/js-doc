@@ -175,9 +175,9 @@ Objects are a unordered collection of **key:value** pairs. Each key-value pair i
 
 ```js
 let person = {
-    firstName = "Antonio",
-    lastName = "Soto",
-    job = "web developer"
+    firstName : "Antonio",
+    lastName : "Soto",
+    job : "web developer"
 };
 ```
 
@@ -192,10 +192,52 @@ console.log(person.firstName); //prints the name Antonio
 console.log(person['firstName']); //prints the same
 ```
 
-We can use the bracket notation to access to some specific values:
+We can use the bracket notation to access or compute some value to access:
 
 ```js
 let keyName = "name";
 console.log(person['first'] + keyName); 
 console.log(person['last'] + keyName);
+```
+
+## Objects methods
+
+We can create functions in the object, but this is known as **methods**.
+
+```js
+let person = {
+  firstName: "Antonio",
+  lastName: "Soto",
+  birthYear: 1997,
+  hasDriverLicence: true,
+  //   calcAge: function () {
+  //     return 2022 - this.birthYear;
+  //   },
+
+  //this is also valid
+  //   calcAge: function () {
+  //     let age = 2022 - this.birthYear;
+  //     return age;
+  //   },
+
+  //Dry principle with this.age
+  calcAge: function () {
+    this.age = 2022 - this.birthYear; // here we are creating the property age with this.age
+    return this.age;
+  },
+
+  getSummary: function () {
+    return console.log(
+      `This person named ${this.firstName} ${
+        this.lastName
+      } is ${this.calcAge()} years old and ${
+        this.hasDriverLicence ? "has driver licence" : "has not driver licence"
+      }`
+    );
+  },
+};
+
+console.log(person.calcAge()); //we call the method first in order to create the this.age property
+console.log(person.age);
+person.getSummary(); //this print : This person named Antonio Soto is 25 years old and has driver licence
 ```
