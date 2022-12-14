@@ -241,3 +241,22 @@ console.log(person.calcAge()); //we call the method first in order to create the
 console.log(person.age);
 person.getSummary(); //this print : This person named Antonio Soto is 25 years old and has driver licence
 ```
+
+## Execution context
+
+More very detailed info: [js-execution-context](https://www.freecodecamp.org/news/execution-context-how-javascript-works-behind-the-scenes/)
+
+## Scope
+
+Scope concepts:
+
+* **Scoping**: How our program's variables are **organized** and **accessed**. *"Where do variables live?"* or *"Where can we access a certain variable, and where not?"*
+* **Lexical scoping**: Scoping is controlled by **placement** of functions and blocks in the code.
+* **Scope**:Space or environment in which a certain variable is **declared** (*variable environment in case of functions*). There is **global** scope, **function** scope, and **block** scope.
+* **Scope of a variable**: Region of our code where a certain variable can be **accessed**.
+
+The 3 types of scope:
+
+* **Global** scope:
+* **Function** scope:
+* **Block Scope (ES6)** scope:
