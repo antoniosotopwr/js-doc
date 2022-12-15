@@ -252,11 +252,46 @@ Scope concepts:
 
 * **Scoping**: How our program's variables are **organized** and **accessed**. *"Where do variables live?"* or *"Where can we access a certain variable, and where not?"*
 * **Lexical scoping**: Scoping is controlled by **placement** of functions and blocks in the code.
-* **Scope**:Space or environment in which a certain variable is **declared** (*variable environment in case of functions*). There is **global** scope, **function** scope, and **block** scope.
+* **Scope**: Space or environment in which a certain variable is **declared** (*variable environment in case of functions*). There is the **global** scope, **function** scope, and **block** scope.
 * **Scope of a variable**: Region of our code where a certain variable can be **accessed**.
 
 The 3 types of scope:
+**Global** scope:
 
-* **Global** scope:
-* **Function** scope:
-* **Block Scope (ES6)** scope:
+```js
+const me = "Antonio";
+const job = "web developer";
+const year = "1997";
+```
+
+* Outside of **any** function or block
+* Variables declared in global scope are accessible **everywhere**
+
+**Function** scope:
+
+```js
+function calcAge(birthYear){
+  const now = 2037;
+  const age = now - birthyear;
+  return age;
+}
+
+console.log(now) // ReferenceError
+```
+
+* Variables are accessible only **inside function, NOT** outside
+* Also called local scope
+
+**Block Scope (ES6)** scope:
+
+```js
+if (year >= 1981 && year <= 1996){
+  const millenial = true;
+  const food = 'Avocado toast';
+}//Example: if block, for loop block, etc.
+
+console.log(millenial) //ReferenceError
+```
+
+* Variables are accesible only **inside block** (block scoped). However, this only applies to **let** and **const** variables!
+* Functions are **also block scoped** (only in strict mode)
