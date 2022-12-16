@@ -244,6 +244,8 @@ person.getSummary(); //this print : This person named Antonio Soto is 25 years o
 
 ## Execution context
 
+The execution context has 3 parts:
+
 More very detailed info: [js-execution-context](https://www.freecodecamp.org/news/execution-context-how-javascript-works-behind-the-scenes/)
 
 ## Scope
@@ -295,3 +297,7 @@ console.log(millenial) //ReferenceError
 
 * Variables are accesible only **inside block** (block scoped). However, this only applies to **let** and **const** variables!
 * Functions are **also block scoped** (only in strict mode)
+
+## Destructuring Arrays
+
+
