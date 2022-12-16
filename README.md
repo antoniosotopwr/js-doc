@@ -244,7 +244,7 @@ person.getSummary(); //this print : This person named Antonio Soto is 25 years o
 
 ## Execution context
 
-The execution context has 3 parts:
+This topic could be hard for beginners, maybe you could read later if you are a newbie with JS.
 
 More very detailed info: [js-execution-context](https://www.freecodecamp.org/news/execution-context-how-javascript-works-behind-the-scenes/)
 
