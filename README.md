@@ -300,4 +300,35 @@ console.log(millenial) //ReferenceError
 
 ## Destructuring Arrays
 
+When we pass those to a function, it may need not be an object/array as a whole. It may need individual pieces.
 
+*Destructuring assignment* is a special syntax that allows us to “unpack” arrays or objects into a bunch of variables, as sometimes that’s more convenient.
+
+```js
+const arr = [1,2,3];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+// VS Desctructuring
+const [x, y, z] = arr;
+console.log(x, y, z);
+```
+
+We can use destructuring for receive two values from a function:
+
+```js
+const restaurant = {
+  starterMenu: ["Garlic bread", "sauce", "cheese"],
+  mainMenu: ["pizza", "pasta", "risotto"],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
+
+const [starter, main] = restaurant.order(2, 0);
+console.log(starter, main); // prints cheese pizza
+```
+
+More info: [js-destructuring-fcc](https://www.freecodecamp.org/news/array-and-object-destructuring-in-javascript/)
+
+More info: [js-destructuring-info](https://javascript.info/destructuring-assignment)
