@@ -332,3 +332,45 @@ console.log(starter, main); // prints cheese pizza
 More info: [js-destructuring-fcc](https://www.freecodecamp.org/news/array-and-object-destructuring-in-javascript/)
 
 More info: [js-destructuring-info](https://javascript.info/destructuring-assignment)
+
+## Destructuring Objects
+
+We can also destructuring objects :
+
+```js
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+};
+
+const {name, openingHours, categories} = restaurant;
+console.log(name, openingHours, categories); // this prints Classico Italiano  Object { thu: {…}, fri: {…}, sat: {…} } Array(4) [ "Italian", "Pizzeria", "Vegetarian", "Organic" ]
+```
+
+Also we can:
+
+* We can rename the property names
+* Define default values
+* Mutating variables () / switching variables
+
+More info: [js-destructuring-fcc](https://www.freecodecamp.org/news/array-and-object-destructuring-in-javascript/)
+
+More info: [js-destructuring-fcc](https://dmitripavlutin.com/javascript-object-destructuring/)
