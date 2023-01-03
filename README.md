@@ -411,9 +411,7 @@ Prints
 Real world example:
 
 ![Image](./img/spread3.PNG)
-
-Spread operator for add propertys to other object and make a shallow copy:
-
+Spread operator for add propertys to other object and make a shallow copy:  
 ![Image](./img/spread4.PNG)
 
 More info: [js-spread-operator](https://www.javascripttutorial.net/es6/javascript-spread/)
