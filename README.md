@@ -393,9 +393,12 @@ const newArr = [1, 2, ...arr];
 
 Also we can use the spread operator:
 
-* If we want the elements of an array individually
+If we want the elements of an array individually:
+
 ![Image](./img/spread1.PNG)
+
 Prints
+
 ![Image](./img/spread2.PNG)
 
 * Make a shallow copy of an array
@@ -414,4 +417,3 @@ Spread operator for add propertys to other object and make a shallow copy:
 ![Image](./img/spread4.PNG)
 
 More info: [js-spread-operator](https://www.javascripttutorial.net/es6/javascript-spread/)
-
