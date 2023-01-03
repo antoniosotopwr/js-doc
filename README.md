@@ -394,9 +394,24 @@ const newArr = [1, 2, ...arr];
 Also we can use the spread operator:
 
 * If we want the elements of an array individually
+![Image](./img/spread1.PNG)
+Prints
+![Image](./img/spread2.PNG)
+
 * Make a shallow copy of an array
 * Join two or more arrays together
 
 ```js
 ...newArray // this prints 1 2 7 8 9
 ```
+
+Real world example:
+
+![Image](./img/spread3.PNG)
+
+Spread operator for add propertys to other object and make a shallow copy:
+
+![Image](./img/spread4.PNG)
+
+More info: [js-spread-operator](https://www.javascripttutorial.net/es6/javascript-spread/)
+
