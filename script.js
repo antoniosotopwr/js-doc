@@ -34,3 +34,8 @@ const restaurant = {
 };
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories); // this prints Classico Italiano  Object { thu: {…}, fri: {…}, sat: {…} } Array(4) [ "Italian", "Pizzeria", "Vegetarian", "Organic" ]
+
+const arr = [7, 8, 9];
+const traditionalNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// VS Spread operator
+const newArr = [1, 2, ...arr];

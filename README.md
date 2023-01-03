@@ -374,3 +374,29 @@ Also we can:
 More info: [js-destructuring-fcc](https://www.freecodecamp.org/news/array-and-object-destructuring-in-javascript/)
 
 More info: [js-destructuring-fcc](https://dmitripavlutin.com/javascript-object-destructuring/)
+
+## Spread operator
+
+The spread operator works in all the **iterables** (arrays, strings, maps or sets, NOT objects).
+
+We can only use the spread operator when we are building an array or when we are passing values into a function.
+
+We can use the spread operator to expand an array in a easier way:
+
+```js
+const arr = [7, 8, 9];
+const traditionalNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// VS Spread operator
+const newArr = [1, 2, ...arr];
+
+```
+
+Also we can use the spread operator:
+
+* If we want the elements of an array individually
+* Make a shallow copy of an array
+* Join two or more arrays together
+
+```js
+...newArray // this prints 1 2 7 8 9
+```
