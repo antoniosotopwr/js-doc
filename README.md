@@ -377,6 +377,10 @@ More info: [js-destructuring-fcc](https://dmitripavlutin.com/javascript-object-d
 
 ## Spread operator
 
+We use the SPREAD in the RIGHT side of =
+
+Works to unpack elements.
+
 The spread operator works in all the **iterables** (arrays, strings, maps or sets, NOT objects).
 
 We can only use the spread operator when we are building an array or when we are passing values into a function.
@@ -417,3 +421,11 @@ Spread operator for add propertys to other object and make a shallow copy:
 ![Image](./img/spread4.PNG)
 
 More info: [js-spread-operator](https://www.javascripttutorial.net/es6/javascript-spread/)
+
+## Rest Pattern
+
+Pack elements.
+
+We use the REST in the LEFT side of =
+
+Collect multiple elements and condence them into an array.
