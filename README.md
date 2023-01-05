@@ -420,6 +420,8 @@ Spread operator for add propertys to other object and make a shallow copy:
   
 ![Image](./img/spread4.PNG)
 
+> spread operator is used where we would otherwise write values separated by commas
+
 More info: [js-spread-operator](https://www.javascripttutorial.net/es6/javascript-spread/)
 
 ## Rest Pattern
@@ -429,3 +431,45 @@ Pack elements.
 We use the REST in the LEFT side of =
 
 Collect multiple elements and condence them into an array.
+
+The rest pattern must be the last in the array.
+
+```js
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);//This prints 1 2 [3, 4, 5]
+```
+
+Also, we can use the rest pattern with objects.
+
+## Rest parameter
+
+We can use the rest parameter to dinamically add values to a parameter function:
+
+```js
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3); //5
+add(5, 3, 7, 2); //17
+add(8, 2, 5, 3, 2); //20
+```
+
+We can use the spread operator to unpack the array in the add arguments:
+
+```js
+const x = [23, 5, 7];
+add(...x); //using spread operator
+```
+
+> rest operator is used where we would write variable names separated by commas
+
+another example of rest:
+
+![Image](./img/rest1.PNG)
+
+![Image](./img/rest2.PNG)
+
+![Image](./img/rest3.PNG)

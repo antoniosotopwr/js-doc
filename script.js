@@ -39,3 +39,16 @@ const arr = [7, 8, 9];
 const traditionalNewArr = [1, 2, arr[0], arr[1], arr[2]];
 // VS Spread operator
 const newArr = [1, 2, ...arr];
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3); //5
+add(5, 3, 7, 2); //17
+add(8, 2, 5, 3, 2); //20
+
+const x = [23, 5, 7];
+add(...x); //using spread operator
