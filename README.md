@@ -477,3 +477,17 @@ another example of rest:
 More info: [js-rest-pattern](https://javascript.info/rest-parameters-spread)
 
 More info: [js-rest-parameters](https://www.javascripttutorial.net/es6/javascript-rest-parameters/)
+
+## Short circuiting (|| and &&)
+
+We use the or (||) and the and (&&) for short circuiting
+
+This works with the truthy and falsy values
+
+## Nullish operator
+
+This is used as the || operator, but only works with null and undefined values:
+
+![Image](./img/nullish.PNG)
+
+`The image above prints 10 and 0`
