@@ -422,7 +422,7 @@ Spread operator for add propertys to other object and make a shallow copy:
 
 > spread operator is used where we would otherwise write values separated by commas
 
-More info: [js-spread-operator](https://www.javascripttutorial.net/es6/javascript-spread/)https://javascript.info/rest-parameters-spread
+More info: [js-spread-operator](https://www.javascripttutorial.net/es6/javascript-spread/)
 
 ## Rest Pattern
 
@@ -476,3 +476,4 @@ another example of rest:
 
 More info: [js-rest-pattern](https://javascript.info/rest-parameters-spread)
 
+More info: [js-rest-parameters](https://www.javascripttutorial.net/es6/javascript-rest-parameters/)
