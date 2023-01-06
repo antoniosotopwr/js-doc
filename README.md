@@ -486,8 +486,22 @@ This works with the truthy and falsy values
 
 ## Nullish operator
 
-This is used as the || operator, but only works with null and undefined values:
+This is used as the || operator, but only works with null and undefined values (NOT 0 or ''):
 
 ![Image](./img/nullish.PNG)
 
 `The image above prints 10 and 0`
+
+## Logical Assigment Operators
+
+This is a brief form or do short circuiting:
+
+```js
+//OR assigment
+// rest1.numGuests = rest1.numGuests || 10;
+rest1.numGuests ||= 10;
+
+//AND assigment
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+```
