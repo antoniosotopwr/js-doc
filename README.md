@@ -505,3 +505,9 @@ rest1.numGuests ||= 10;
 // rest2.owner = rest2.owner && '<ANONYMOUS>';
 rest2.owner &&= '<ANONYMOUS>';
 ```
+
+## The for-of loop
+
+## Enhanced object literals
+
+## Optional chaining
