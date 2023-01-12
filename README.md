@@ -511,3 +511,54 @@ rest2.owner &&= '<ANONYMOUS>';
 ## Enhanced object literals
 
 ## Optional chaining
+
+## Looping objects: Object Keys, values and entries
+
+## Sets
+
+A set is a unique collection of unique values, it cannot have duplicates values.
+
+The order of the elements is irrelevant
+
+The sets does not have indexes
+
+Sets are iterable
+
+The main use of sets its remove duplicate values from arrays
+
+```js
+let ordersSet = new Set([
+  'pasta',
+  'pizza',
+  'pizza',
+  'risotto',
+  'pasta',
+  'pizza',
+]);
+console.log(ordersSet); //delete the duplicates
+
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size);
+
+console.log(ordersSet.has('pizza'));
+console.log(ordersSet.has('bread'));
+ordersSet.add('garlic bread');
+ordersSet.delete('risotto');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (let order of ordersSet) console.log(order);
+
+//main use
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+console.log(staff);
+const stafUnique = [...new Set(staff)];
+console.log(stafUnique);
+
+console.log(
+  new Set(['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
+);
+
+console.log(new Set('antonisoto').size);
+```
