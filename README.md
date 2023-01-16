@@ -562,3 +562,122 @@ console.log(
 
 console.log(new Set('antonisoto').size);
 ```
+
+## Maps
+
+Maps are a data structure that we can use to map values to keys.
+
+Data is stored in key value pairs in maps.
+
+```js
+
+const rest = new Map(); //new Map() creates the a map
+rest.set('name', 'Classico Italiano'); //set for add a new element
+rest.set(1, 'Firenze Italy');
+console.log(rest.set(2, 'Lisbon Portugal')); //this also add a element to the map
+
+//We can concatenate multiples sets
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('closed', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+console.log(rest.get('name')); //Get for obtain the value with the key
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+//We can use this pattern to get the keys and prints the value
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+//rest.clear();
+
+//we can use an array as key
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+
+console.log(rest);
+console.log(rest.size);//We can use size for maps or sets as the same like lenght with arrays
+console.log(rest.get(arr));
+```
+
+## Maps Iteration
+
+```js
+//Convert object to map
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//---------
+//We can add elements to map passing an array of arrays
+
+const question = new Map([
+  ['question', 'what is the best programming language in thw world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'correct ✨'],
+  [false, 'Try again!'],
+]);
+
+console.log(question);
+
+//MAP ITERATION
+//Quiz app
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+// let answer = Number(prompt('Your answer:'));
+let answer = 3;
+console.log(answer);
+
+//This is equivalent to the if below
+console.log(question.get(answer === question.get('correct')));
+
+if (answer === question.get('correct')) {
+  console.log(question.get(true));
+} else {
+  console.log(question.get(false));
+}
+
+//convert map to array
+
+console.log([question]);
+// console.log(question.entries());
+console.log([question.keys()]);
+console.log([question.values()]);
+
+//convert map to array unpacking the values, the correct way instead above
+
+console.log([...question]);
+// console.log(question.entries());
+console.log([...question.keys()]);
+console.log([...question.values()]);
+
+```
