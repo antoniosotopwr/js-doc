@@ -681,3 +681,52 @@ console.log([...question.keys()]);
 console.log([...question.values()]);
 
 ```
+
+## Strings
+
+```js
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); //A
+console.log(plane[1]); //3
+console.log(plane[2]); //2
+console.log('B737'[0]); //B
+
+console.log(airline.length); //we can use lenght method with strings
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r')); //shows the index of the last string founded
+console.log(airline.indexOf('portugal'));
+
+// We can use slice function to get a piece of the string on the started index or at started and end position
+//We can also use negative positions
+console.log(airline.slice(4)); //Air Portugal
+console.log(airline.slice(4, 7)); //Air
+
+console.log(airline.slice(0, airline.indexOf(' '))); //TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); //Portugal
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  //B and E are the middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('you got middle seat 😆');
+  else console.log('You got lucky 😎');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+//We can use methods with strings because the string are converted to objects and after use the method return to an string
+
+console.log(new String('jonas'));
+console.log(typeof new String('jonas'));
+
+console.log(typeof new String('jonas').slice(1));
+
+```
