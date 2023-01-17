@@ -730,3 +730,65 @@ console.log(typeof new String('jonas'));
 console.log(typeof new String('jonas').slice(1));
 
 ```
+
+---
+
+```js
+
+// const airline = 'TAP Air Portugal';
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+//Fix capitalization in name
+const passager = 'jOnAs';
+const passagerLower = passager.toLowerCase();
+const passagerCorrect = passagerLower[0].toUpperCase() + passagerLower.slice(1);
+console.log(passagerCorrect);
+
+//Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = ' Hello@Jonas.io \n';
+
+//trim() removes the blank spaces or \n things
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+//REPLACING
+
+const priceGB = '288,97%';
+const priceUS = priceGB.replace('%', '$').replace(',', '.');
+console.log(priceUS); //288.97$
+
+const announcement =
+  'all passagers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate')); //this replace only the first match
+console.log(announcement.replaceAll('door', 'gate')); //this replace all the match
+console.log(announcement.replace(/door/g, 'gate')); //we use regular expressions to match all the occurences
+
+//Booleans
+
+const plane2 = 'Airbus A320neo';
+console.log(plane2.includes('A320')); //if includes the word returns true
+console.log(plane2.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Arirbus family');
+}
+
+//PRACTICAL EXERCISE
+
+const checkBaggae = function (items){
+  const baggage = items.toLowerCase();
+  if(baggage.includes('knife') || baggage.includes('gun')){
+    console.log('You are NOT allowed on board');
+  }else{
+    console.log("Welcome aboard!");
+  }
+};
+
+checkBaggae("I hava a laptop, some food and a pocket Knife");
+checkBaggae("Socks and camera");
+checkBaggae("Got some snacks and a gun for protection");
+```
