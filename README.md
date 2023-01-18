@@ -792,3 +792,55 @@ checkBaggae("I hava a laptop, some food and a pocket Knife");
 checkBaggae("Socks and camera");
 checkBaggae("Got some snacks and a gun for protection");
 ```
+
+---
+
+```js
+'use strict';
+
+//SPLIT
+
+console.log('a+very+nice+string'.split('+')); //["a","very","nice","string"]
+console.log('Antonio Soto'.split(' ')); //["Antonio", "Soto"]
+
+const [firstName, lastName] = 'Antonio Soto'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' '); //Mr. Antonio SOTO
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' '); //add every part of the name in an array
+
+  let namesUpper = [];
+  for (const n of names) {
+    // newName.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+
+  console.log(namesUpper.join(' ')); //Jose Antonio Soto Hernandez
+  console.log(...namesUpper);
+};
+
+capitalizeName('jose antonio pedro paramo');
+capitalizeName('agatha cristhie');
+
+//Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(4337889287014490));
+console.log(maskCreditCard('4337889287014490'));
+
+//Repeat
+const message2 = 'bad weather... All Departures Delayed... ';
+console.log(message2.repeat(5));
+
+```
+
