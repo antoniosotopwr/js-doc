@@ -865,3 +865,78 @@ for (const flight of flights.split('+')) {
   console.log(output);
 }
 ```
+
+## Default parameters
+
+```js
+const bookings = [];
+//we can define a default parameter creating the function and assign values to the parameters
+const createBooking = function (flightNum, numPassagers = 1, price = 199) {
+  /*
+    ES5
+    numPassagers = numPassagers || 1;
+    price = price || 199;
+    */
+  const booking = {
+    flightNum,
+    numPassagers,
+    price,
+  };
+  console.log(booking);
+  bookings.push(booking);
+};
+
+createBooking('LH123');
+createBooking('LH123', 2, 800);
+createBooking('LH123', 8);
+createBooking('LH123', 5);
+
+//for ignore a parameter and use the default we use undefined
+createBooking('LH123', undefined, 1000);
+console.log(bookings);
+```
+
+## How passing arguments works
+
+```js
+//VALUE VS REFERENCE
+
+//passing a primitive value in a function is like creating a copy outside the function
+//when we are passing an object (the only non-primitive) is like passing the same object
+
+const flight = 'LH234';
+const antonio = {
+  name: 'Antonio Soto',
+  passport: 12345,
+};
+
+const checkIn = function (flightNum, passager) {
+  flightNum = 'LH999';
+  passager.name = 'Mr.' + passager.name;
+
+  if (passager.passport === 12345) {
+    alert('Checked in');
+  } else {
+    alert('Wrong passport!');
+  }
+};
+// checkIn(flight, antonio);
+// console.log(flight);
+// console.log(antonio);
+
+//Is the same as doing...
+
+// const flightNum = flight;
+// const passager = antonio;
+
+
+//example of passing the same object from above
+
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 100000000);
+};
+newPassport(antonio);
+checkIn(flight, antonio);
+
+//IMPORTANT : js does not have pass by reference, only by value
+```
