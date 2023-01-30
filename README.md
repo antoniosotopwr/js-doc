@@ -5,6 +5,12 @@
 * JS   -> Verbs
 
 ---
+**Table of contents**
+
+[Type conversion and coercion](#type-conversion-and-coercion)
+[Truthy and falsy values](#truthy-and-falsy-values)
+
+---
 Javascript is **dynamic typing**: we don't have to manually define the data type of the value stored in a variable.
 
 ## Type conversion and coercion
