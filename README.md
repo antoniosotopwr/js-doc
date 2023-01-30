@@ -8,7 +8,6 @@
 **Table of contents**
 
 [Type conversion and coercion](#type-conversion-and-coercion)
-
 [Truthy and falsy values](#truthy-and-falsy-values)
 
 ---
