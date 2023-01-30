@@ -9,6 +9,7 @@
 
 [Type conversion and coercion](#type-conversion-and-coercion)
 [Truthy and falsy values](#truthy-and-falsy-values)
+
 [How passing arguments works](#how-passing-arguments-works)
 [Default parameters](#default-parameters)
 
