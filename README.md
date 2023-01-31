@@ -5,13 +5,14 @@
 * JS   -> Verbs
 
 ---
-**Table of contents**
+
+### Table of contents
 
 [Type conversion and coercion](#type-conversion-and-coercion)\
-[Truthy and falsy values](#truthy-and-falsy-values)
-
+[Truthy and falsy values](#truthy-and-falsy-values)\
+[Statements and expressions](#statements-and-expressions)\
+[Default parameters](#default-parameters)\
 [How passing arguments works](#how-passing-arguments-works)\
-[Default parameters](#default-parameters)
 
 ---
 Javascript is **dynamic typing**: we don't have to manually define the data type of the value stored in a variable.
@@ -948,4 +949,50 @@ newPassport(antonio);
 checkIn(flight, antonio);
 
 //IMPORTANT : js does not have pass by reference, only by value
+```
+
+## First class and higher order functions
+
+![Image](./img/first-higher-functions.png)
+
+## Functions acepting callback functions
+
+```js
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+/*
+//higher-order function
+because receives another functions
+
+Pros:
+-helps to maintain the code clean
+-and  allows to create abstraction
+ their main goal is to handle complexity by hiding unnecessary details from the user.
+*/
+
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('Javascript is the best!', upperFirstWord);
+transformer('Javascript is the best!', oneWord);
+
+//JS uses callbacks all the time
+
+const high5 = function () {
+  console.log('😁');
+};
+
+document.body.addEventListener('click', high5);
+
 ```
