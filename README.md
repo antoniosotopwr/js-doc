@@ -11,6 +11,15 @@
 [Type conversion and coercion](#type-conversion-and-coercion)\
 [Truthy and falsy values](#truthy-and-falsy-values)\
 [Statements and expressions](#statements-and-expressions)\
+[The conditional (ternary) operator](#the-conditional-(ternary)-operator)\
+[Function declaration vs function expression](#function-declaration-vs-function-expression)\
+[Parameters and arguments](#parameters-and-arguments)\
+[Arrow functions](#arrow-functions)\
+[Arrays](#arrays)\
+[Objects](#bjects)\
+
+
+
 [Default parameters](#default-parameters)\
 [How passing arguments works](#how-passing-arguments-works)\
 
