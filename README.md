@@ -16,7 +16,13 @@
 [Parameters and arguments](#parameters-and-arguments)\
 [Arrow functions](#arrow-functions)\
 [Arrays](#arrays)\
-[Objects](#bjects)\
+[Objects](#objects)\
+[Dot vs Bracket notation](#dot-vs-bracket-notation)\
+[Objects methods](#objects-methods)\
+[Execution context](#execution-context)\
+[Scope](#scope)\
+[Destructuring Arrays](#destructuring-arrays)\
+[Destructuring Objects](#destructuring-objects)\
 
 
 
