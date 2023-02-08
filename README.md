@@ -23,6 +23,16 @@
 [Scope](#scope)\
 [Destructuring Arrays](#destructuring-arrays)\
 [Destructuring Objects](#destructuring-objects)\
+[Spread operator](#spread-operator)\
+[Rest Pattern](#rest-pattern)\
+[Rest parameter](#rest-parameter)\
+[Short circuiting (|| and &&)](#short-circuiting-(||-and-&&))\
+[Nullish operator](#nullish-operator)\
+[Logical Assigment Operators](#logical-assigment-operators)\
+[The for-of loop](#the-for-of-loop)\
+[Enhanced-object-literals](#enhanced-object-literals)\
+[Optional chaining](#optional-chaining)\
+[Looping objects:object keys values and entries](#looping-objects:object-keys-values-and-entries)\
 
 
 
