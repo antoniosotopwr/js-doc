@@ -547,7 +547,7 @@ rest2.owner &&= '<ANONYMOUS>';
 
 ## Optional chaining
 
-## Looping objects: Object Keys, values and entries
+## Looping objects: Object Keys values and entries
 
 ## Sets
 
