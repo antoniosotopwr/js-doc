@@ -32,12 +32,15 @@
 [The for-of loop](#the-for-of-loop)\
 [Enhanced-object-literals](#enhanced-object-literals)\
 [Optional chaining](#optional-chaining)\
-[Looping objects:object keys values and entries](#looping-objects:object-keys-values-and-entries)\
-
-
-
+[Looping objects: object keys values and entries](#looping-objects:-object-keys-values-and-entries)\
+[Sets](#sets)\
+[Maps](#maps)\
+[Maps Iteration](#maps-iteration)\
+[Strings](#strings)\
 [Default parameters](#default-parameters)\
 [How passing arguments works](#how-passing-arguments-works)\
+[First class and higher order functions](#first-class-and-higher-order-functions)\
+[Functions acepting callback functions](#functions-acepting-callback-functions)\
 
 ---
 Javascript is **dynamic typing**: we don't have to manually define the data type of the value stored in a variable.
