@@ -40,7 +40,7 @@
 [Default parameters](#default-parameters)\
 [How passing arguments works](#how-passing-arguments-works)\
 [First class and higher order functions](#first-class-and-higher-order-functions)\
-[Functions acepting callback functions](#functions-acepting-callback-functions)\
+[Functions acepting callback functions](#functions-acepting-callback-functions)
 
 ---
 Javascript is **dynamic typing**: we don't have to manually define the data type of the value stored in a variable.
@@ -981,7 +981,7 @@ checkIn(flight, antonio);
 
 ## First class and higher order functions
 
-![Image](./img/first-higher-functions.png)
+![Image](./img/first-higher-functions.PNG)
 
 ## Functions acepting callback functions
 
