@@ -1024,3 +1024,32 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ```
+
+## Functions returning functions
+
+```js
+'use strict';
+
+//This is used in functional programming paradigm
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+//Arrow Function version
+// const greetArrow = greeting => {
+//   return name => {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+//Shorter version
+// const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
+
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+greeterHey('Steven');
+
+greet('Hello')('Jonas');
+```
