@@ -1115,3 +1115,53 @@ console.log(swiss);
 //But is more common do it with modern js spread operator
 book.call(swiss, ...flightData);
 ```
+
+## The bind method
+
+We can use the bind method instead call method
+
+We only call the bind method once instead every time with call method
+
+bind returns a new function(important for event listeners use) instead of call that calls the function
+
+```js
+//book.call(eurowings, 23, 'Antonio');
+
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Steven Williams');
+//We can specify or "predifine" parts of the arguments before hand with bind method
+//This is a common pattern called "partial application"
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Antonio Soto');
+bookEW23('Martha Cooper');
+
+//BIND with event listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+//lufthansa.buyPlane();
+
+//When we use "this" word in event listeners is assigned to the web element
+//for selecting the correct element we use bind
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+//Partial application BIND
+
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+//this is equivalent to addVAT = value => value + value * 0.23;
+
+console.log(addVAT(100));
+console.log(addVAT(23));
+```
