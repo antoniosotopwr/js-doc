@@ -1053,3 +1053,65 @@ greeterHey('Steven');
 
 greet('Hello')('Jonas');
 ```
+
+## The call and apply method
+
+When we want to use a method outside the object where was created, we use the call method
+
+We use the call method to define manually where the "this" word object refers
+
+The call sintax is call(object, arguments)
+
+```js
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book:function(){}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Antonio Soto');
+lufthansa.book(635, 'Adriana');
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+// Assigning the method book to a variable
+// This is possible thanks to first class citizens
+const book = lufthansa.book;
+
+// Does not work
+book(23, 'Sarah williams');
+
+// call method
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(eurowings, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iatacode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper');
+
+//We can use the apply method for passing an array instead of arguments
+
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+//But is more common do it with modern js spread operator
+book.call(swiss, ...flightData);
+```
