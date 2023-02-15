@@ -1124,6 +1124,9 @@ We only call the bind method once instead every time with call method
 
 bind returns a new function(important for event listeners use) instead of call that calls the function
 
+This helps with the lost of "this" word.
+[More detailed info about bind:](https://es.javascript.info/bind)
+
 ```js
 //book.call(eurowings, 23, 'Antonio');
 
@@ -1164,4 +1167,5 @@ const addVAT = addTax.bind(null, 0.23);
 
 console.log(addVAT(100));
 console.log(addVAT(23));
+
 ```
