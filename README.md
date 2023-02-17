@@ -1169,3 +1169,28 @@ console.log(addVAT(100));
 console.log(addVAT(23));
 
 ```
+
+## Inmediatelly invoked function expressions
+
+IMMEDIATELLY INVOKED FUNCTION EXPRESSIONS (IIFE)
+
+It is a function that is called once and after it disappear
+
+```js
+const runOnce = function () {
+  console.log('This will never run again (should not be)');
+};
+
+runOnce();
+
+//IIFE
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+// console.log(isPrivate); this doesn't print anything due to scope
+
+//IIFE with arrow function
+(() => console.log('This will ALSO never run again'))();
+```
