@@ -1194,3 +1194,28 @@ runOnce();
 //IIFE with arrow function
 (() => console.log('This will ALSO never run again'))();
 ```
+
+## Closures
+
+```js
+const secureBooking = function () {
+  let passagerCount = 0;
+
+  return function () {
+    passagerCount++;
+    console.log(`${passagerCount} passagers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker(); //This prints 1 passagers
+booker(); //This prints 2 passagers
+booker(); //This prints 3 passagers
+
+console.dir(booker);
+```
+
+Closures definitions: 
+
+![closures](./img/closure.PNG)
