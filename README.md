@@ -1197,6 +1197,14 @@ runOnce();
 
 ## Closures
 
+Closures definitions: 
+  
+![closures](./img/closure.PNG)
+
+We create a closure when we call a function returning a function
+
+The scope have priority over the scope chain
+
 ```js
 const secureBooking = function () {
   let passagerCount = 0;
@@ -1216,6 +1224,48 @@ booker(); //This prints 3 passagers
 console.dir(booker);
 ```
 
-Closures definitions: 
+---
 
-![closures](./img/closure.PNG)
+```js
+// Example 1
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+console.dir(f);
+
+//Re-assigning f function
+h();
+f();
+console.dir(f);
+
+// Example 2
+// The scope have priority over the scope chain
+// const perGroup = 1000;
+const boardPassagers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passagers`);
+    console.log(`There are 3 groups, each with ${perGroup} passagers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+boardPassagers(180,3);
+```
