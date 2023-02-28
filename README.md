@@ -1306,3 +1306,17 @@ console.log([...arr1, ...arr2]);
 // JOIN
 console.log(letters.join(' - '));
 ```
+
+```js
+const arr = [23, 11, 64];
+console.log(arr[0]);
+console.log(arr.at(0));
+
+//getting the last array element
+console.log(arr[arr.length - 1]);
+console.log(arr.slice(-1)[0]);
+console.log(arr.at(-1));
+
+// It also works for arrays
+console.log('jonas'.at(0)); // print j
+```
