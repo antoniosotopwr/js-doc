@@ -1307,6 +1307,8 @@ console.log([...arr1, ...arr2]);
 console.log(letters.join(' - '));
 ```
 
+## The at method
+
 ```js
 const arr = [23, 11, 64];
 console.log(arr[0]);
@@ -1320,3 +1322,52 @@ console.log(arr.at(-1));
 // It also works for arrays
 console.log('jonas'.at(0)); // print j
 ```
+
+## The Foor each loop
+
+```js
+'use strict';
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+//Using the for of loop
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+//FOR EACH LOOP
+//We cannot use the break sentence with for each, only with traditional for and for of loop
+console.log('---FOREACH---');
+movements.forEach(function (mov, i, arr) {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+});
+
+// We can also use for each loop with maps and sets
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}:${value}`);
+});
+
+//SET
+
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+//We only use value in sets
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${value}:${value}`);
+});
+```
+
