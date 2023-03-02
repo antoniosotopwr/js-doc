@@ -1371,3 +1371,40 @@ currenciesUnique.forEach(function (value, _, map) {
 });
 ```
 
+## Dom manipulation
+
+We can insert html content to the dom with the method
+`insertAdjacentHTML('afterbegin',html)`
+
+Here an example:
+
+```js
+const containerMovements = document.querySelector('.movements');
+//function to insert the movements in the container 
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = '';
+  //textContent = 0;
+
+  movements.forEach((mov, i) => {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const html = `
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+      <div class="movements__value">${mov}</div>
+    </div>`;
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+
+const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+displayMovements(account1.movements);
+```
