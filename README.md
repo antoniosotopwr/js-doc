@@ -1197,7 +1197,7 @@ runOnce();
 
 ## Closures
 
-Closures definitions: 
+Closures definitions:
   
 ![closures](./img/closure.PNG)
 
@@ -1272,25 +1272,33 @@ boardPassagers(180,3);
 
 ## Array methods
 
+[More detailed info about splice:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
 ```js
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
+// SLICE and SPLICE also works with negative indexes
+
 //SLICE
 //Slice method doesn't mutate the original array
-console.log(arr.slice(2));
-console.log(arr.slice(2, 4));
-console.log(arr.slice(-2));
-console.log(arr.slice(-1));
-console.log(arr.slice(1, -2));
-console.log(arr.slice());
-console.log([...arr]);
+//this only takes parts of the array without mutating the original
+
+console.log(arr.slice(2)); // [ "c", "d", "e" ]
+console.log(arr.slice(2, 4)); //don't include the final value (4) [ "c", "d" ]
+console.log(arr.slice(-2)); //[ "d", "e" ]
+console.log(arr.slice(-1)); //[ "e" ]
+console.log(`here ${arr.slice(1, -1)}`); //here b,c,d
+console.log(arr.slice()); // Shalow copy [ "a", "b", "c", "d", "e" ]
+console.log([...arr]); //[ "a", "b", "c", "d", "e" ]
 
 //SPLICE
-// SPLICE method mutates the original array
-arr.splice(-1);
-console.log(arr);
+// SPLICE method mutates the original array (add or delete)
+console.log('splice');
+arr.splice(2); //the removed part
+console.log(arr); //the remaining part [ "a", "b" ]
 arr.splice(1, 2);
-console.log(arr);
+console.log(arr); //[ "a" ]
+
 
 // REVERSE
 let arr1 = ['a', 'b', 'c', 'd', 'e'];
