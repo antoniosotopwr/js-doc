@@ -1416,3 +1416,105 @@ const account1 = {
 
 displayMovements(account1.movements);
 ```
+
+## Data transformations: map, filter and reduce
+
+MAP METHOD
+
+Map method creates a new array
+
+```js
+const eurToUsd = 1.1;
+//map create a new array
+const movementsUSD = movements.map(mov => {
+  return mov * eurToUsd;
+});
+console.log(movements);
+console.log(movementsUSD);
+
+// We could do this instead of the above example:
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+//Another example of MAP
+const movementsDescriptions = movements.map((mov, i) => {
+  `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+    mov
+  )}`;
+});
+```
+
+Another example with map:
+
+```js
+const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: 'Jessica Davis',
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: 'Steven Thomas Williams',
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: 'Sarah Smith',
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+//MAP example
+//function to create an abreviation of the names from account's array
+//This function returns the first letter of each name example, js, stw,ss
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUsernames(accounts);
+console.log(accounts);
+```
+
+## Filter
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+//Filter example
+//map create a new array
+const deposits = movements.filter(mov => {
+  return mov > 0;
+});
+
+console.log(movements);
+console.log(deposits);
+
+// We could do this instead of the above example:
+const depositsFor = [];
+for (const mov of movements) if(mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(mov => {
+    return mov < 0;
+});
+
+console.log(withdrawals);
+```
