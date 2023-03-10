@@ -1518,3 +1518,58 @@ const withdrawals = movements.filter(mov => {
 
 console.log(withdrawals);
 ```
+
+## Reduce method
+
+Reduce return a single value from all the array
+accumulator -> snowball
+
+REDUCE example:
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   return acc + cur; //this equals to acc+=cur
+// }, 0);
+
+//With arrow function
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+
+// We could do this instead of the above example:
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2); //3840
+
+const max = movements.reduce((acc, mov, i) => {
+  console.log(acc);
+  if (acc > mov) {
+    return acc;
+  } else {
+    return mov;
+  }
+}, movements[0]);
+
+console.log(max); //3000
+```
+
+## Chaining methods
+
+CHAINING METHODS
+We can chain some of the methods in js, we need that the first method returns an array
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+//PIPELINE
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map((mov, i, arr) => {
+    return mov * eurToUsd;
+  })
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD);
+```
