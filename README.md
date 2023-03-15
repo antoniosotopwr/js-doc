@@ -1574,7 +1574,7 @@ const totalDepositsUSD = movements
 console.log(totalDepositsUSD);
 ```
 
-## Find method
+## Find and findIndex method
 
 Find method only returns the first element that accepts the condition
 alike filter method that returns a new array:
@@ -1622,4 +1622,16 @@ console.log(accounts);
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
 
+```
+
+Find index
+Find index works similary to find but instead of return the value returns the index of the value
+
+```js
+
+const index = accounts.findIndex(
+  acc => acc.username === currentAccount.username
+);
+
+console.log(index);
 ```
