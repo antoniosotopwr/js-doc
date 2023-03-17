@@ -1635,3 +1635,94 @@ const index = accounts.findIndex(
 
 console.log(index);
 ```
+
+## Some and every method
+
+We use the some method to test a condition in the array,
+returns true if at least one value pass the condition
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+
+console.log(movements);
+
+//Equality
+console.log(movements.includes(-130)); //true
+
+//condition (SOME METHOD)
+console.log(movements.some(mov => mov === -130)); //true
+
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits); //true
+
+//-EVERY METHOD
+// Every works similary to some but
+// all the values in the array must pass the condition to return true
+
+console.log(movements.every(mov => mov > 0)); //false
+
+//We can write the callback outside the paramethers of the funcion
+//This helps with the DRY principle
+const deposit = mov => mov > 0;
+console.log(movements.every(deposit));
+console.log(movements.some(deposit));
+console.log(movements.filter(deposit));
+```
+
+## Flat and flatmap methods
+
+```js
+const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: 'Jessica Davis',
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: 'Steven Thomas Williams',
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: 'Sarah Smith',
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+
+
+//We use the FLAT method to get all the elements of sub-array in a single array
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat()); // [1,2,3,4,5,6,7,8]
+
+//We can also specify levels of deep in the arguments of flat
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(2)); // [1,2,3,4,5,6,7,8]
+
+// FLAT
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance); //17840
+
+//Flat map (is like use map and then flat methods together)
+//Decreases the proccesing, it's more optimal
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance2);
+```
