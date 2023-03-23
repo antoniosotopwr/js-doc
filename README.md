@@ -1726,3 +1726,48 @@ const overalBalance2 = accounts
   .reduce((acc, mov) => acc + mov, 0);
 console.log(overalBalance2);
 ```
+
+## More ways of creating and filling arrays
+
+```js
+//Clasical ways of create an array
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+//Create empty arrays "programmatically"
+const x = new Array(7);
+console.log(x); //Array(7) [ <7 empty slots> ]
+
+//Fill method for above example
+x.fill(1, 3, 5); //begining and end index (3,5)
+console.log(x); //Array(7) [ <3 empty slots>, 1, 1, <2 empty slots> ]
+x.fill(1);
+console.log(x); //Array(7) [ 1, 1, 1, 1, 1, 1, 1 ]
+
+arr.fill(23, 2, 6);
+console.log(arr); //Array(7) [ 1, 2, 23, 23, 23, 23, 7 ]
+
+//Array.from method (defines a new array or also can convert something to array)
+
+const y = Array.from({ length: 7 }, () => 2);
+console.log(y); //Array(7) [ 2, 2, 2, 2, 2, 2, 2 ]
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z); //Array(7) [ 1, 2, 3, 4, 5, 6, 7 ]
+
+//Array.from example to convert nodeList to array
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('', ''))
+  );
+  console.log(movementsUI); //Array(8) [ 1300, 70, -130, -650, 3000, -400, 450, 200 ]
+
+  //Another way of convert the nodeList to array with spread operator
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+
+});
+```
+
+Array.from method allows chaining methods, spread operator does not
