@@ -41,6 +41,8 @@
 [How passing arguments works](#how-passing-arguments-works)\
 [First class and higher order functions](#first-class-and-higher-order-functions)\
 [Functions acepting callback functions](#functions-acepting-callback-functions)
+[Functions returning functions](#functions-returning-functions)
+[The call and apply method](#the-call-and-apply-method)
 
 ---
 Javascript is **dynamic typing**: we don't have to manually define the data type of the value stored in a variable.
