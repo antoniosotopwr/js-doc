@@ -1773,3 +1773,41 @@ labelBalance.addEventListener('click', function () {
 ```
 
 Array.from method allows chaining methods, spread operator does not
+
+## Numbers
+
+```js
+
+// All the numbers in js are represented in floating point
+// 23 === 23.0 true
+
+//Conversion
+//Classic method
+console.log(Number('23'));
+console.log(+'23');
+
+//Parsing (get only the number)
+//second paramter to define the base number
+console.log(Number.parseInt('30px', 10)); //30
+console.log(Number.parseInt('e23', 10)); //NaN
+
+console.log(Number.parseInt(' 2.5rem')); //2
+console.log(Number.parseFloat(' 2.5rem')); //2.5
+
+//Check if a value is NaN
+console.log(Number.isNaN(20)); //false
+console.log(Number.isNaN('20')); //false
+console.log(Number.isNaN(+'20X')); //true
+console.log(Number.isNaN(23 / 0)); //false
+
+// Checking if a value is a number
+console.log(Number.isFinite(20)); //true
+console.log(Number.isFinite('20')); //false
+console.log(Number.isFinite(+'20X')); //false
+console.log(Number.isFinite(23 / 0)); //false
+
+//For integers
+console.log(Number.isInteger(23)); //true
+console.log(Number.isInteger(23.0)); //true
+console.log(Number.isInteger(23 / 0)); //false
+```
