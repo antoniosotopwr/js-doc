@@ -1811,3 +1811,61 @@ console.log(Number.isInteger(23)); //true
 console.log(Number.isInteger(23.0)); //true
 console.log(Number.isInteger(23 / 0)); //false
 ```
+
+## Math methods and rounding 
+
+```js
+//sqrt root
+console.log(Math.sqrt(25)); //5
+console.log(25 ** (1 / 2)); //5
+console.log(8 ** (1 / 3)); //2
+
+//max and min method
+console.log(Math.max(5, 18, 23, 11, 2)); //23
+//max makes type coercion but not parsing
+console.log(Math.max(5, 18, '25', 11, 2)); //25
+console.log(Math.max(5, 18, '23px', 11, 2)); // not work NaN
+
+console.log(Math.min(5, 18, 26, 11, 2)); //random
+
+console.log(Math.PI * Number.parseFloat('10px') ** 2);
+
+//Classic random numbers
+
+console.log(Math.trunc(Math.random() * 6) + 1);
+
+//General function for random numbers
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min) + 1) + min;
+//0...1 -> 0...(max - min) -> min...max
+//console.log(randomInt(10, 20));
+
+//Rounding integers
+//round to the closest decimal 5> or 5<
+console.log(Math.round(23.3)); //23
+console.log(Math.round(23.9)); //24
+
+// round to the highest decimal
+console.log(Math.ceil(23.3)); //24
+console.log(Math.ceil(23.9)); //24
+
+// round to the lowest decimal
+console.log(Math.floor(23.3)); //23
+console.log(Math.floor('23.9')); //23 floor makes type coercion
+
+//trunc eliminates the decimals
+console.log(Math.trunc(23.3)); //23
+
+//floor is more accurate for rounding
+console.log(Math.trunc(-23.3)); //-23
+console.log(Math.floor(-23.3)); //-24
+
+//rounding decimals
+//To fixed returns a string
+console.log((2.7).toFixed(0)); // 3 string
+console.log((2.7).toFixed(3)); //2.700 string
+console.log((2.345).toFixed(2)); //2.35 string
+//convert to number with "+"
+console.log(+(2.345).toFixed(2)); //2.35 number
+```
