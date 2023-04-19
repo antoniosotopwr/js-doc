@@ -1869,3 +1869,70 @@ console.log((2.345).toFixed(2)); //2.35 string
 //convert to number with "+"
 console.log(+(2.345).toFixed(2)); //2.35 number
 ```
+
+## Numeric separator
+
+```js
+//We can use "_" to simulate "," in numbers
+//Numbers with _ are printed normal
+
+const diameter = 287_460_000_000;
+console.log(diameter); //287460000000
+
+const price = 345_99;
+console.log(price); //345_99
+
+const transferFee1 = 15_00;
+const transferFee2 = 1_500;
+
+const PI = 3.1415;
+console.log(PI);
+
+//this will not work, only work for numbers
+console.log(Number('230_000'));
+```
+
+## BigInt
+
+```js
+//We can use bigInt for huge numbers
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+//the next numbers not work correctly sometimes, not use it
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+//For use big int add a "n" letter at the end of the number
+
+console.log(483930292830283902810182902839028302n);
+console.log(BigInt(48492832));
+
+//Operations
+//it work with *
+console.log(10000n + 10000n);
+console.log(3648273892738272823729102829362916n * 100000n);
+
+//It does not work with Math methods
+
+const huge = 20293029372902830281071n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+//Exceptions
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n);
+console.log(20n == '20');
+
+//string concatenations work
+console.log(huge + 'is REALLY big!!!');
+
+//Divisions
+//Divisions with BigInt don't show the decimals parts
+console.log(11n / 3n);
+console.log(10 / 3);
+```
