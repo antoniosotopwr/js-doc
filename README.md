@@ -1936,3 +1936,55 @@ console.log(huge + 'is REALLY big!!!');
 console.log(11n / 3n);
 console.log(10 / 3);
 ```
+
+## Dates
+
+```js
+const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+
+  movementsDates: ['2019-11-18T21:31:17.178Z'],
+};
+
+//Creating a date (actual date)
+const now = new Date();
+console.log(now);
+
+//We can define a specific date (not recommended)
+
+console.log(new Date('Aug 02 2020 18:05:41'));
+console.log(new Date('December 24,2015')); //Thu Dec 24 2015 00:00:00 GMT-0600
+//getting a date and print it
+console.log(new Date(account1.movementsDates[0])); //Mon Nov 18 2019 15:31:17 GMT-0600 (hora estándar central)
+
+//We can define year, month, day, hour, minutes and seconds i Dates' constructor
+
+console.log(new Date(2037, 10, 19, 15, 23, 5)); //Thu Nov 19 2037 15:23:05 GMT-0600
+console.log(new Date(2037, 10, 31)); //Tue Dec 01 2037 00:00:00 GMT-0600
+
+console.log(new Date(0)); //Wed Dec 31 1969 18:00:00 GMT-0600
+
+//Transform hours to milliseconds (as a result we get a timestamp and this is the date printed)
+console.log(new Date(3 * 24 * 60 * 60 * 1000)); // Sat Jan 03 1970 18:00:00 GMT-0600
+
+//working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(now.getSeconds());
+console.log(future.toISOString()); //2037-11-19T21:23:00.000Z
+console.log(future.getTime()); // get the timestamp 2142278580000
+
+console.log(new Date(21422569980000)); // Wed Nov 08 2648 03:53:00 GMT-0600
+console.log(Date.now()); //2142278580000
+future.setFullYear(20); //i dont understand why the result always changes
+console.log(future);
+```
