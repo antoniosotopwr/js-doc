@@ -864,7 +864,7 @@ const capitalizeName = function (name) {
 capitalizeName('jose antonio pedro paramo');
 capitalizeName('agatha cristhie');
 
-//Padding
+//Padding (adding characters before or after the string)
 const message = 'Go to gate 23!';
 console.log(message.padStart(20, '+').padEnd(30, '+'));
 console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
@@ -1987,4 +1987,15 @@ console.log(new Date(21422569980000)); // Wed Nov 08 2648 03:53:00 GMT-0600
 console.log(Date.now()); //2142278580000
 future.setFullYear(20); //i dont understand why the result always changes
 console.log(future);
+
+//calc how many days passed
+
+const future1 = new Date(2037, 10, 19, 15, 23);
+console.log(+future); //converting to number
+
+const calcDaysPassed = (date1, date2) =>
+  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+
+const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
+console.log(days1);
 ```
