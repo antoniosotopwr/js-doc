@@ -1994,8 +1994,39 @@ const future1 = new Date(2037, 10, 19, 15, 23);
 console.log(+future); //converting to number
 
 const calcDaysPassed = (date1, date2) =>
-  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+  Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 console.log(days1);
+```
+
+## Internationalizing dates
+
+```js
+'use strict';
+
+//straightforward way of doing
+const now = new Date();
+console.log(now);
+
+const locale = navigator.language;
+console.log(locale);
+//We can search the code in http://www.lingoes.net/en/translator/langcode.htm
+
+let formatDate = new Intl.DateTimeFormat(locale).format(now);
+console.log(formatDate); //26/4/2023
+
+//second method with options
+
+const options = {
+  hour: 'numeric',
+  minute: 'numeric',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  weekday: 'long',
+};
+
+formatDate = new Intl.DateTimeFormat(locale, options).format(now);
+console.log(formatDate); //miércoles, 26 de abril de 2023, 10:11
 ```
