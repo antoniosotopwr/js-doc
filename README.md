@@ -1812,7 +1812,7 @@ console.log(Number.isInteger(23.0)); //true
 console.log(Number.isInteger(23 / 0)); //false
 ```
 
-## Math methods and rounding 
+## Math methods and rounding
 
 ```js
 //sqrt root
@@ -2029,4 +2029,40 @@ const options = {
 
 formatDate = new Intl.DateTimeFormat(locale, options).format(now);
 console.log(formatDate); //miércoles, 26 de abril de 2023, 10:11
+```
+
+## Internationalizing numbers
+
+```js
+const num = 3884764.23;
+
+const options = {
+  style: 'currency',
+  unit: 'celsius',
+  currency: 'EUR',
+};
+
+//using the paramether of options
+console.log('US: ', new Intl.NumberFormat('en-US', options).format(num)); //US: €3,884,764.23
+
+console.log(
+  'Germany:    ',
+  new Intl.NumberFormat('de-DE', options).format(num)
+); //Germany: 3.884.764,23 €
+
+console.log('Mexico:    ', new Intl.NumberFormat('es-MX', options).format(num)); //Mexico: EUR 3,884,764.23
+
+console.log(
+  'Navigator auto:    ',
+  new Intl.NumberFormat(navigator.language, options).format(num)
+);
+
+//we can create a general function
+//function to format numbers with Intl
+const formatCur = function (value, locale, currency) {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: currency,
+  }).format(value);
+};
 ```
