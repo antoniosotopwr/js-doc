@@ -2066,3 +2066,45 @@ const formatCur = function (value, locale, currency) {
   }).format(value);
 };
 ```
+
+## setTimeout
+
+```js
+'use strict';
+
+//The "setTimeout" timer runs just once after a defined time
+//Also we have the "setInterval" timer that keeps running forever until we stop it
+
+//setTimeout with parameters
+
+const ingredients = ['olives', 'spinach'];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  ...ingredients
+);
+
+console.log('Waiting');
+
+if (ingredients.includes('spinach')) {
+  clearTimeout(pizzaTimer);
+  //setTimeout without parameters (classic)
+  setTimeout(() => console.log('There is not pizza for you'), 3000);
+}
+
+//setInterval
+
+setInterval(function () {
+  const now = new Date();
+  console.log(now);
+}, 1000);
+
+//Creating a clock
+setInterval(function () {
+    const now = new Date();
+    let hours = `${now.getHours()}`.padStart(2, '0');
+    let minutes = `${now.getMinutes()}`.padStart(2, '0');
+    let seconds = `${now.getSeconds()}`.padStart(2, '0');
+    console.log(`${hours}:${minutes}:${seconds}`);
+  }, 1000);
+```
