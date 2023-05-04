@@ -2108,3 +2108,68 @@ setInterval(function () {
     console.log(`${hours}:${minutes}:${seconds}`);
   }, 1000);
 ```
+
+## Select, create and delete elements
+
+```js
+'use strict';
+
+//select all the html page
+console.log(document.documentElement);
+//select the head
+console.log(document.head);
+//select the body
+console.log(document.body);
+
+//select the first element with the header class
+const header = document.querySelector('.header');
+
+//select all the elements with the section class
+//returns a node list
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
+
+//selecting element by #
+console.log(document.getElementById('section--1'));
+
+//This returns a htmlCollections (which is updated automatically
+//if we delete an element unlike node that doesn't update automatically)
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
+
+//this also returns a htmlCollection
+console.log(document.getElementsByClassName('btn'));
+
+//------Creating and inserting elements------
+//.insertAdjacentElement
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+
+//insert text content
+// message.textContent = 'we use cookies for improved functionality and analytics';
+
+//insert text with html tags
+message.innerHTML =
+  'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
+
+//insert content before or after(but inside of the tag)
+// header.prepend(message)
+header.append(message);
+
+//also this append or prepend only allow to insert the element only ance at least it will be copy with cloneNode
+header.append(message.cloneNode(true));
+
+//insert content before or after a tag (but ouside of it)
+//header.before(message);
+//header.after(message);
+
+//------Delete element-----
+document
+  .querySelector('.btn--close-cookie')
+  .addEventListener('click', function () {
+    message.remove();
+    //old way with dom traversing
+    // message.parentElement.removeChild(message);
+  });
+
+``` 
