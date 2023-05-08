@@ -2173,3 +2173,66 @@ document
   });
 
 ``` 
+
+## Styles, attributes and classes 
+
+```js
+//styles (change properties)
+message.style.backgroundColor = '#37383d';
+message.style.width = '103%';
+
+//we can only print properties in which we define manually the style as the two above
+console.log(message.style.color); //this prints <empty sting>
+console.log(message.style.backgroundColor); //rgb(55, 56, 61)
+
+//if we want to print or get a specific style define in the css file
+//we use getComputedStyle function
+
+console.log(getComputedStyle(message).color); //rgb(187, 187, 187)
+console.log(getComputedStyle(message).height); //49.5333px
+
+//getting and changing height property
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+//for change a css variable, we use style.setProperty
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+//ATTRIBUTES
+//get attributes from html tag
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt); //Bankist logo
+console.log(logo.src); //http://127.0.0.1:5500/img/logo.png
+console.log(logo.className); //nav__logo
+
+//set attribute
+logo.alt = 'Beautiful minimalism logo';
+
+//non-standrd
+//we add the property designer manually
+console.log(logo.designer); //does not work "undefined"
+//we can access with getAttribute()
+console.log(logo.getAttribute('designer')); //antonio
+//adding a new attribute
+logo.setAttribute('company', 'Bankist');
+
+//how to get the absolute and relative link
+console.log(logo.src); //http://127.0.0.1:5500/img/logo.png
+console.log(logo.getAttribute('src')); //img/logo.png
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href); //http://127.0.0.1:5500/index.html#
+console.log(link.getAttribute('href')); //#
+
+//get Data attributes
+console.log(logo.dataset.versionNumber);
+
+//CLASSES
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c', 'j');
+logo.classList.contains('c', 'j'); //not includes
+
+//don't use  (it overwrite all the classes)
+logo.className = 'jonas';
+```
