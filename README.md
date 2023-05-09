@@ -2236,3 +2236,55 @@ logo.classList.contains('c', 'j'); //not includes
 //don't use  (it overwrite all the classes)
 logo.className = 'jonas';
 ```
+
+## Implementing smooth scrolling (all or specific sections)
+
+Image explanation:
+
+![smoothScrolling](./img/smoothScrollingExplained.PNG)
+
+```js
+'use strict';
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scroll (x/y)', window.pageXOffset, window.pageYOffset);
+
+  console.log(
+    'height/widht viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+  //Old way of doing it
+  //Scrolling
+  //Not passing an object
+
+  //   window.scrollTo(
+  //     s1coords.left + window.pageXOffset,
+  //     s1coords.top + window.pageYOffset
+  //   );
+
+  //passing an object
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  //modern way
+  section1.scrollIntoView({ behavior: 'smooth' });
+
+  //the easiest way of doing without js
+  //In css file
+  //   html,body{
+  //     scroll-behavior: smooth;
+  //   }
+});
+```
