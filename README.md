@@ -42,7 +42,20 @@
 [First class and higher order functions](#first-class-and-higher-order-functions)\
 [Functions acepting callback functions](#functions-acepting-callback-functions)\
 [Functions returning functions](#functions-returning-functions)\
-[The call and apply method](#the-call-and-apply-method)
+[The call and apply method](#the-call-and-apply-method)\
+[The bind method](#the-bind-method)\
+[Inmediatelly invoked function expressions](#inmediatelly-invoked-function-expressions)\
+[Closures](#closures)\
+[Array methods](#array-methods)\
+[The Foor each loop](#the-foor-each-loop)\
+[Dom manipulation](#dom-manipulation)\
+[Data transformations: map, filter and reduce](#data-transformations:-map-filter-and-reduce)\
+[Filter](#filter)\
+[Reduce method](#reduce-method)\
+[Chaining-methods](#chaining-methods)\
+[Find and findIndex method](#find-and-findIndex-method)\
+[Some and every method](#some-and-every-method)\
+[Flat and flatmap methods](#flat-and-flatmap-methods)\
 
 ---
 Javascript is **dynamic typing**: we don't have to manually define the data type of the value stored in a variable.
@@ -2287,4 +2300,24 @@ btnScrollTo.addEventListener('click', function (e) {
   //     scroll-behavior: smooth;
   //   }
 });
+```
+
+## Types of events and event handlers
+
+```js
+'use strict';
+
+const h1 = document.querySelector('h1');
+
+//This is another way of add event listeners
+const alertH1 = function (e) {
+  alert('AddEventListener: Great! You are reading the heading :D');
+  //for delete after using only once
+  //   h1.removeEventListener('mouseenter', alertH1);
+};
+//this way allows us to delete the event listener as we can see in the set timeout
+//with the removeEventListener
+h1.addEventListener('mouseenter', alertH1);
+
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 ```
