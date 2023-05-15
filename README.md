@@ -2321,3 +2321,15 @@ h1.addEventListener('mouseenter', alertH1);
 
 setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 ```
+
+## Event propagation (bubbling and capturing)
+
+![eventPropagation](./img/eventPropagation.PNG)
+
+Event propagation includes the three phases:
+
+1. **Capturing Phase** (go to the target from the parent to the child "up to down")
+2. **Target Phase** (when the event happens in the child)
+3. **Bubbling Phase** (returning to the parent from the child "down to up")
+
+The event happens in all the parent elements if the parents contains the same event of the child
