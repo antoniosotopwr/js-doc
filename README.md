@@ -2333,3 +2333,71 @@ Event propagation includes the three phases:
 3. **Bubbling Phase** (returning to the parent from the child "down to up")
 
 The event happens in all the parent elements if the parents contains the same event of the child
+
+```js
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+  console.log(e.currentTarget === this); // e.currentTarget = .nav__link
+
+  //We can stop event propagation
+  // e.stopPropagation();
+});
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('CONTAINER', e.target, e.currentTarget);
+});
+
+/* We cant capturing the event in the capturing phase instead bubbling phase
+but this only exist for historical reasons, is not used anymore
+we add a third parameter in the add event listener to ",true " */
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('NAV', e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+});
+```
+
+![eventPropagationExample](./img/eventPropagationExample.PNG)
+
+## Event delegation
+
+Without event delegation it doesn't have a good performance
+We need the add all the steps to each element (for each):
+
+```js
+document.querySelectorAll('.nav__link').forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = e.target.getAttribute('href');
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+```
+
+Instead **with event delegation** we only add the steps to the matched element (target)
+
+Steps to use EVENT DELEGATION:
+
+1. Add event listener to common parent element
+2. Determine what element originated the event
+
+```js
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  //Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+```
