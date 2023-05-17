@@ -2401,3 +2401,42 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 ```
+
+## Dom traversing
+
+DOM traversal (also called walking or navigating the DOM)
+is the act of selecting nodes in the DOM tree from other nodes.
+
+```js
+
+const h1 = document.querySelector('h1');
+
+//Going downwards: child
+console.log(h1.querySelectorAll('.highlight')); // NodeList [ span.highlight, span.highlight ]
+console.log(h1.childNodes); // NodeList(9) [ #text, <!--  Green highlight effect  -->, #text, span.highlight, #text, br, #text, span.highlight, #text ]
+console.log(h1.children); // HTMLCollection { 0: span.highlight, 1: br, 2: span.highlight, length: 3 }
+h1.firstElementChild.style.color = 'white';
+h1.lastElementChild.style.color = 'orangered';
+
+//Going upwards: parents
+console.log(h1.parentNode); // <div class="header__title">
+console.log(h1.parentElement); // <div class="header__title">
+
+//Closest go to the parents elements unlike querySelector that goes to children elements
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
+h1.closest('h1').style.background = 'var(--gradient-secondary)';
+
+//Going sideways: siblings
+console.log(h1.previousElementSibling); //null  , doesn't have
+console.log(h1.nextElementSibling); //<h4>
+
+console.log(h1.previousSibling); //#text "\n        "
+console.log(h1.nextSibling); //#text "\n        "
+
+console.log(h1.parentElement.children); //<div class="header__title">
+
+[...h1.parentElement.children].forEach(function (el) {
+  if (el !== h1) el.style.transform = 'scale(0.5)';
+});
+
+```
