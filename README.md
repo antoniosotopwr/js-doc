@@ -2440,3 +2440,35 @@ console.log(h1.parentElement.children); //<div class="header__title">
 });
 
 ```
+
+## Sticky navbar (oldway)
+
+1. get the position when we want the nav becomes sticky
+2. use window.addEventListener('scroll' , function(){}) event
+3. inside the event listener add the condition (if windowCurrentY > positionWhenBecomesSticky) add sticky class to the nav, else remove
+
+CSS:
+
+```css
+.nav.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+```
+
+JS:
+
+```js
+const section1 = document.querySelector('#section--1');
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
+
+window.addEventListener('scroll', function (e) {
+  console.log(window.scrollY);
+  if (this.window.scrollY > initialCoords.top) {
+    nav.classList.add('sticky');
+  } else {
+    nav.classList.remove('sticky');
+  }
+});
+```
